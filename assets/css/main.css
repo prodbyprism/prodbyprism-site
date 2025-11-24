@@ -1290,14 +1290,20 @@ input, select, textarea {
 			#header > :first-child:before {
 				display: none;
 			}
-
-		#header .logo {
-			width: 5.5rem;
-			height: 5.5rem;
-			line-height: 5.5rem;
-			border: solid 1px #ffffff;
-			border-radius: 100%;
-		}
+/* HEADER LOGO */
+#header .logo {
+    width: 5.5rem;                  /* cirkelns storlek */
+    height: 5.5rem;
+    border: solid 1px #ffffff;      /* cirkelkant */
+    border-radius: 100%;            /* gör cirkeln rund */
+    
+    display: flex;                  /* flexbox för centering */
+    justify-content: center;        /* horisontell centrering */
+    align-items: center;            /* vertikal centrering */
+    
+    margin: 0 auto;                 /* centrera cirkeln i header */
+    background-color: transparent;  /* om du vill ha bakgrundsfärg, ändra här */
+}
 
 			#header .logo .icon:before {
 				font-size: 2rem;
@@ -1661,39 +1667,39 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-.logo svg,
-.logo img {
-    display: block;
-    width: 10vw;
-    max-width: 55px;
+/* SVG inuti loggan */
+#header .logo svg {
+    width: 55%;       /* större logga */
     height: auto;
-    margin: 0 auto; /* centrerar horisontellt */
+    fill: #ffffff;
 }
 
-/* Styr vertikalt avstånd */
-.logo svg {
-    fill: #ffffff !important;
+/* IMG fallback */
+#header .logo img {
+    width: 55%;
+    height: auto;
+    filter: brightness(0) invert(1);
 }
 
-.logo img {
-    filter: invert(1) brightness(2);
-}
-
-/* Media queries för små skärmar */
+/* Media queries */
 @media (max-width: 768px) {
-    .logo svg,
-    .logo img {
-        width: 15vw;
-        max-width: 60px;
-        margin-top: 3vh; /* mer toppmarginal på små skärmar */
+    #header .logo {
+        width: 7.5rem;
+        height: 7.5rem;
+    }
+    #header .logo svg,
+    #header .logo img {
+        width: 60%;
     }
 }
 
 @media (max-width: 480px) {
-    .logo svg,
-    .logo img {
-        width: 20vw;
-        max-width: 50px;
-        margin-top: 5vh; /* ännu mer på mobiler */
+    #header .logo {
+        width: 6.5rem;
+        height: 6.5rem;
+    }
+    #header .logo svg,
+    #header .logo img {
+        width: 65%;
     }
 }
