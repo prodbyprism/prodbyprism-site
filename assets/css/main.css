@@ -1661,40 +1661,39 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-/* Logo styling - responsiv */
-.logo svg {
-    width: 10vw;             /* bredd baserad på viewport width */
-    max-width: 55px;         /* maxstorlek för stora skärmar */
-    height: auto;            /* behåller proportioner */
-    fill: #ffffff !important; 
+.logo svg,
+.logo img {
     display: block;
-    margin: 0 auto;          /* centrerar loggan */
+    width: 10vw;
+    max-width: 55px;
+    height: auto;
+    margin: 0 auto; /* centrerar horisontellt */
+}
+
+/* Styr vertikalt avstånd */
+.logo svg {
+    fill: #ffffff !important;
 }
 
 .logo img {
-    width: 10vw;             /* bredd baserad på viewport width */
-    max-width: 55px;         /* maxstorlek */
-    height: auto;
     filter: invert(1) brightness(2);
-    margin: 2vh auto 0;      /* flyttar ned loggan responsivt */
-    display: block;
 }
 
 /* Media queries för små skärmar */
 @media (max-width: 768px) {
     .logo svg,
     .logo img {
-        width: 15vw;         /* lite större på små skärmar */
+        width: 15vw;
         max-width: 60px;
-        margin-top: 1.5vh;
+        margin-top: 3vh; /* mer toppmarginal på små skärmar */
     }
 }
 
 @media (max-width: 480px) {
     .logo svg,
     .logo img {
-        width: 20vw;         /* ännu större på mycket små skärmar */
+        width: 20vw;
         max-width: 50px;
-        margin-top: 1vh;
+        margin-top: 5vh; /* ännu mer på mobiler */
     }
 }
