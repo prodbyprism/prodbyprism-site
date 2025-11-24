@@ -1112,6 +1112,7 @@ input, select, textarea {
 		-ms-transform: scale(1.0);
 		transform: scale(1.0);
 		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -1660,18 +1661,40 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-/* Logo styling */
+/* Logo styling - responsiv */
 .logo svg {
-    width: 50px;          /* ändra storlek här */
-    height: auto;          /* behåller proportioner */
-    fill: #ffffff !important; /* gör SVG vit */
+    width: 10vw;             /* bredd baserad på viewport width */
+    max-width: 55px;         /* maxstorlek för stora skärmar */
+    height: auto;            /* behåller proportioner */
+    fill: #ffffff !important; 
     display: block;
-    margin: 0 auto;        /* centrerar loggan om du vill */
+    margin: 0 auto;          /* centrerar loggan */
 }
 
 .logo img {
-    width: 50px;
+    width: 10vw;             /* bredd baserad på viewport width */
+    max-width: 55px;         /* maxstorlek */
     height: auto;
     filter: invert(1) brightness(2);
-    margin-top: 18px; /* flyttar ned loggan */
+    margin: 2vh auto 0;      /* flyttar ned loggan responsivt */
+    display: block;
+}
+
+/* Media queries för små skärmar */
+@media (max-width: 768px) {
+    .logo svg,
+    .logo img {
+        width: 15vw;         /* lite större på små skärmar */
+        max-width: 60px;
+        margin-top: 1.5vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo svg,
+    .logo img {
+        width: 20vw;         /* ännu större på mycket små skärmar */
+        max-width: 50px;
+        margin-top: 1vh;
+    }
 }
